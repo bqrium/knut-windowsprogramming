@@ -1,0 +1,10 @@
+C:\Users\Com315\source\repos\인사하기1\인사하기1\bin\Debug\인사하기1.exe.config
+C:\Users\Com315\source\repos\인사하기1\인사하기1\bin\Debug\인사하기1.exe
+C:\Users\Com315\source\repos\인사하기1\인사하기1\bin\Debug\인사하기1.pdb
+C:\Users\Com315\source\repos\인사하기1\인사하기1\obj\Debug\인사하기1.csprojAssemblyReference.cache
+C:\Users\Com315\source\repos\인사하기1\인사하기1\obj\Debug\인사하기1.frmInSa.resources
+C:\Users\Com315\source\repos\인사하기1\인사하기1\obj\Debug\인사하기1.Properties.Resources.resources
+C:\Users\Com315\source\repos\인사하기1\인사하기1\obj\Debug\인사하기1.csproj.GenerateResource.cache
+C:\Users\Com315\source\repos\인사하기1\인사하기1\obj\Debug\인사하기1.csproj.CoreCompileInputs.cache
+C:\Users\Com315\source\repos\인사하기1\인사하기1\obj\Debug\인사하기1.exe
+C:\Users\Com315\source\repos\인사하기1\인사하기1\obj\Debug\인사하기1.pdb
