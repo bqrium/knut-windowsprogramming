@@ -1,0 +1,10 @@
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\bin\Debug\MyPoetry3A1.exe.config
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\bin\Debug\MyPoetry3A1.exe
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\bin\Debug\MyPoetry3A1.pdb
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\obj\Debug\MyPoetry3A1.csprojAssemblyReference.cache
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\obj\Debug\MyPoetry3A1.frmMyPoetry.resources
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\obj\Debug\MyPoetry3A1.Properties.Resources.resources
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\obj\Debug\MyPoetry3A1.csproj.GenerateResource.cache
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\obj\Debug\MyPoetry3A1.csproj.CoreCompileInputs.cache
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\obj\Debug\MyPoetry3A1.exe
+C:\Users\Com315\Desktop\최신호\knut-windowsprogramming\MyPoetry3A1\MyPoetry3A1\obj\Debug\MyPoetry3A1.pdb
