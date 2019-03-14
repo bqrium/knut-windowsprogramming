@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMyPoetry));
             this.lblPoetry = new System.Windows.Forms.Label();
             this.btnJinDalRae = new System.Windows.Forms.Button();
@@ -37,7 +38,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblPoet = new System.Windows.Forms.Label();
             this.btnComeOut = new System.Windows.Forms.Button();
-            this.btnBelleyache = new System.Windows.Forms.Button();
+            this.btnBellyache = new System.Windows.Forms.Button();
+            this.tmrUp = new System.Windows.Forms.Timer(this.components);
+            this.btnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPoetry
@@ -45,9 +48,9 @@
             this.lblPoetry.BackColor = System.Drawing.Color.Transparent;
             this.lblPoetry.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPoetry.ForeColor = System.Drawing.Color.Yellow;
-            this.lblPoetry.Location = new System.Drawing.Point(12, 77);
+            this.lblPoetry.Location = new System.Drawing.Point(12, 536);
             this.lblPoetry.Name = "lblPoetry";
-            this.lblPoetry.Size = new System.Drawing.Size(234, 474);
+            this.lblPoetry.Size = new System.Drawing.Size(234, 30);
             this.lblPoetry.TabIndex = 0;
             this.lblPoetry.Text = "내용";
             // 
@@ -59,6 +62,7 @@
             this.btnJinDalRae.TabIndex = 1;
             this.btnJinDalRae.Text = "진달래 꽃";
             this.btnJinDalRae.UseVisualStyleBackColor = true;
+            this.btnJinDalRae.Visible = false;
             this.btnJinDalRae.Click += new System.EventHandler(this.btnJinDalRae_Click_1);
             // 
             // btnChoHon
@@ -69,6 +73,7 @@
             this.btnChoHon.TabIndex = 2;
             this.btnChoHon.Text = "초혼";
             this.btnChoHon.UseVisualStyleBackColor = true;
+            this.btnChoHon.Visible = false;
             this.btnChoHon.Click += new System.EventHandler(this.btnChoHon_Click_1);
             // 
             // btnUmMa
@@ -79,11 +84,12 @@
             this.btnUmMa.TabIndex = 3;
             this.btnUmMa.Text = "엄마야 누나야";
             this.btnUmMa.UseVisualStyleBackColor = true;
+            this.btnUmMa.Visible = false;
             this.btnUmMa.Click += new System.EventHandler(this.btnUmMa_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(325, 164);
+            this.btnExit.Location = new System.Drawing.Point(325, 535);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(123, 23);
             this.btnExit.TabIndex = 4;
@@ -99,9 +105,8 @@
             this.lblTitle.ForeColor = System.Drawing.Color.Aqua;
             this.lblTitle.Location = new System.Drawing.Point(112, 19);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(42, 16);
+            this.lblTitle.Size = new System.Drawing.Size(0, 16);
             this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "제목";
             // 
             // lblPoet
             // 
@@ -111,9 +116,8 @@
             this.lblPoet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblPoet.Location = new System.Drawing.Point(204, 48);
             this.lblPoet.Name = "lblPoet";
-            this.lblPoet.Size = new System.Drawing.Size(42, 16);
+            this.lblPoet.Size = new System.Drawing.Size(0, 16);
             this.lblPoet.TabIndex = 6;
-            this.lblPoet.Text = "시인";
             // 
             // btnComeOut
             // 
@@ -123,24 +127,43 @@
             this.btnComeOut.TabIndex = 7;
             this.btnComeOut.Text = "Come out and play";
             this.btnComeOut.UseVisualStyleBackColor = true;
+            this.btnComeOut.Visible = false;
             this.btnComeOut.Click += new System.EventHandler(this.btnComeOut_Click);
             // 
-            // btnBelleyache
+            // btnBellyache
             // 
-            this.btnBelleyache.Location = new System.Drawing.Point(325, 135);
-            this.btnBelleyache.Name = "btnBelleyache";
-            this.btnBelleyache.Size = new System.Drawing.Size(123, 23);
-            this.btnBelleyache.TabIndex = 8;
-            this.btnBelleyache.Text = "Belleyache";
-            this.btnBelleyache.UseVisualStyleBackColor = true;
-            this.btnBelleyache.Click += new System.EventHandler(this.btnBelleyache_Click);
+            this.btnBellyache.Location = new System.Drawing.Point(325, 135);
+            this.btnBellyache.Name = "btnBellyache";
+            this.btnBellyache.Size = new System.Drawing.Size(123, 23);
+            this.btnBellyache.TabIndex = 8;
+            this.btnBellyache.Text = "Bellyache";
+            this.btnBellyache.UseVisualStyleBackColor = true;
+            this.btnBellyache.Visible = false;
+            this.btnBellyache.Click += new System.EventHandler(this.btnBellyache_Click);
+            // 
+            // tmrUp
+            // 
+            this.tmrUp.Interval = 300;
+            this.tmrUp.Tick += new System.EventHandler(this.tmrUp_Tick);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(325, 506);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(123, 23);
+            this.btnReturn.TabIndex = 9;
+            this.btnReturn.Text = "돌아가기(&R)";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Visible = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // frmMyPoetry
             // 
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(460, 575);
-            this.Controls.Add(this.btnBelleyache);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnBellyache);
             this.Controls.Add(this.btnComeOut);
             this.Controls.Add(this.lblPoet);
             this.Controls.Add(this.lblTitle);
@@ -164,7 +187,9 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblPoet;
         private System.Windows.Forms.Button btnComeOut;
-        private System.Windows.Forms.Button btnBelleyache;
+        private System.Windows.Forms.Button btnBellyache;
+        private System.Windows.Forms.Timer tmrUp;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
 
