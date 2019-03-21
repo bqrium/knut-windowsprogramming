@@ -14,6 +14,8 @@ namespace RockPaperScissors
     {
         enum RPS { 가위 = 1, 바위, 보 };
         enum GameResult { Win, Lose, Tie };
+        enum Gamer { 당신, 나}
+        private Gamer Winner, Loser;
         private RPS user, computer;
         private GameResult PlayResult;
         private int UserScore, ComputerScore;
@@ -31,59 +33,68 @@ namespace RockPaperScissors
 
         private void btnScissors_Click(object sender, EventArgs e)
         {
-            user = RPS.가위;
-            computer = (RPS)(rnd.Next(3) + 1);
-            switch (computer)
+            if (!isBattingOver())
             {
-                case RPS.가위:
-                    PlayResult = GameResult.Tie;
-                    break;
-                case RPS.바위:
-                    PlayResult = GameResult.Win;
-                    break;
-                case RPS.보:
-                    PlayResult = GameResult.Lose;
-                    break;
+                user = RPS.가위;
+                computer = (RPS)(rnd.Next(3) + 1);
+                switch (computer)
+                {
+                    case RPS.가위:
+                        PlayResult = GameResult.Tie;
+                        break;
+                    case RPS.바위:
+                        PlayResult = GameResult.Win;
+                        break;
+                    case RPS.보:
+                        PlayResult = GameResult.Lose;
+                        break;
+                }
+                WriteMessage();
             }
-            WriteMessage();
         }
 
         private void btnRock_Click(object sender, EventArgs e)
         {
-            user = RPS.바위;
-            computer = (RPS)(rnd.Next(3) + 1);
-            switch (computer)
+            if (!isBattingOver())
             {
-                case RPS.가위:
-                    PlayResult = GameResult.Lose;
-                    break;
-                case RPS.바위:
-                    PlayResult = GameResult.Tie;
-                    break;
-                case RPS.보:
-                    PlayResult = GameResult.Win;
-                    break;
+                user = RPS.바위;
+                computer = (RPS)(rnd.Next(3) + 1);
+                switch (computer)
+                {
+                    case RPS.가위:
+                        PlayResult = GameResult.Lose;
+                        break;
+                    case RPS.바위:
+                        PlayResult = GameResult.Tie;
+                        break;
+                    case RPS.보:
+                        PlayResult = GameResult.Win;
+                        break;
+                }
+                WriteMessage();
             }
-            WriteMessage();
         }
 
         private void btnPaper_Click(object sender, EventArgs e)
         {
-            user = RPS.보;
-            computer = (RPS)(rnd.Next(3) + 1);
-            switch (computer)
+            if (!isBattingOver())
             {
-                case RPS.가위:
-                    PlayResult = GameResult.Win;
-                    break;
-                case RPS.바위:
-                    PlayResult = GameResult.Lose;
-                    break;
-                case RPS.보:
-                    PlayResult = GameResult.Tie;
-                    break;
+                user = RPS.보;
+                computer = (RPS)(rnd.Next(3) + 1);
+                switch (computer)
+                {
+                    case RPS.가위:
+                        PlayResult = GameResult.Win;
+                        break;
+                    case RPS.바위:
+                        PlayResult = GameResult.Lose;
+                        break;
+                    case RPS.보:
+                        PlayResult = GameResult.Tie;
+                        break;
+                }
+                WriteMessage();
             }
-            WriteMessage();
         }
 
         private void hsBatting_Scroll(object sender, ScrollEventArgs e)
@@ -109,15 +120,85 @@ namespace RockPaperScissors
                         + "내가 이겼어 당신은 졌네요~~~\n"
                         + "내가 이겼어 당신은 졌네요~~~\n"
                         + "내가 이겼어 당신은 졌네요~~~";
+                    UserScore = int.Parse(txtUserScore.Text) - int.Parse(txtBatting.Text);
+                    ComputerScore = int.Parse(txtComputerScore.Text) + int.Parse(txtBatting.Text);
                     break;
                 case GameResult.Lose:
                     lblMessage.Text = "감히 나를 이기다니...\n"
                         + "나를 이기다니 개졸립네 ㄹㅇ\n"
                         + "나를 이기다니 개졸립네 ㄹㅇ\n"
                         + "나를 이기다니 개졸립네 ㄹㅇ";
+                    UserScore = int.Parse(txtUserScore.Text) + int.Parse(txtBatting.Text);
+                    ComputerScore = int.Parse(txtComputerScore.Text) - int.Parse(txtBatting.Text);
                     break;
+            }
+            if (ComputerScore <= 0)
+            {
+                Winner = Gamer.당신;
+                Loser = Gamer.나;
+                WriteGameOut();
+            }
+            else if(UserScore <= 0)
+            {
+                Winner = Gamer.나;
+                Loser = Gamer.당신;
+                WriteGameOut();
+            }
+            else
+            {
+                txtUserScore.Text = UserScore.ToString();
+                txtComputerScore.Text = ComputerScore.ToString();
+            }
+        }
+
+        private void WriteGameOut()
+        {
+            string strMessage = Loser.ToString() +"은" + Winner.ToString()+"에게 졌습니다.";
+            DialogResult dlgResult = MessageBox.Show("게임을 종료할까요?", "게임종료", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlgResult == DialogResult.Yes)
+            {
+                btnExit.PerformClick();
+            }
+            else
+            {
+                ResetData();
+            }
+        }
+
+        private void ResetData()
+        {
+            txtUserPlayResult.Text = "";
+            txtComputerPlayResult.Text = "";
+            txtUserScore.Text = "500";
+            txtComputerScore.Text = "500";
+            lblMessage.Text = "";            
+            txtBatting.Text = "";
+            hsBatting.Value = 500;
+        }
+
+        private Boolean isBattingOver()
+        {
+            if (int.Parse(txtUserScore.Text) < int.Parse(txtBatting.Text))
+            {
+                if (MessageBox.Show("당신의 점수가 배팅액보다 작습니다. 남은 돈을 다 걸까요?", "배팅액 부족", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    txtBatting.Text = txtUserScore.Text;
+                }
+                return true;
+            }
+            else if (int.Parse(txtComputerScore.Text) < int.Parse(txtBatting.Text))
+            {
+                if (MessageBox.Show("내 돈 보다 많이 걸었어 내 돈 남은 거 다 걸까요?", "배팅액 부족", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    txtBatting.Text = txtComputerScore.Text;
+                    
+                }
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
 }
-
