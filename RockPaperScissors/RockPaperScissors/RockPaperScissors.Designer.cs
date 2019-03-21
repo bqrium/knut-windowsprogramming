@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.grpUser = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtUserScore = new System.Windows.Forms.TextBox();
+            this.txtUserPlayResult = new System.Windows.Forms.TextBox();
             this.lblUserScore = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpComputer = new System.Windows.Forms.GroupBox();
+            this.txtComputerScore = new System.Windows.Forms.TextBox();
+            this.txtComputerPlayResult = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblComputerPlayResult = new System.Windows.Forms.Label();
             this.grpMessage = new System.Windows.Forms.GroupBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.grpBatting = new System.Windows.Forms.GroupBox();
-            this.txtBatting = new System.Windows.Forms.TextBox();
             this.hsBatting = new System.Windows.Forms.HScrollBar();
-            this.txtUserPlayResult = new System.Windows.Forms.TextBox();
-            this.txtUserScore = new System.Windows.Forms.TextBox();
+            this.txtBatting = new System.Windows.Forms.TextBox();
             this.btnScissors = new System.Windows.Forms.Button();
             this.btnRock = new System.Windows.Forms.Button();
             this.btnPaper = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.txtComputerPlayResult = new System.Windows.Forms.TextBox();
-            this.txtComputerScore = new System.Windows.Forms.TextBox();
             this.grpUser.SuspendLayout();
             this.grpComputer.SuspendLayout();
             this.grpMessage.SuspendLayout();
@@ -66,14 +66,24 @@
             this.grpUser.TabStop = false;
             this.grpUser.Text = "사용자";
             // 
-            // label1
+            // txtUserScore
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "낸 거";
+            this.txtUserScore.Enabled = false;
+            this.txtUserScore.Location = new System.Drawing.Point(49, 45);
+            this.txtUserScore.Name = "txtUserScore";
+            this.txtUserScore.Size = new System.Drawing.Size(100, 21);
+            this.txtUserScore.TabIndex = 5;
+            this.txtUserScore.Text = "500";
+            this.txtUserScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtUserPlayResult
+            // 
+            this.txtUserPlayResult.Enabled = false;
+            this.txtUserPlayResult.Location = new System.Drawing.Point(49, 18);
+            this.txtUserPlayResult.Name = "txtUserPlayResult";
+            this.txtUserPlayResult.Size = new System.Drawing.Size(100, 21);
+            this.txtUserPlayResult.TabIndex = 4;
+            this.txtUserPlayResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblUserScore
             // 
@@ -83,6 +93,15 @@
             this.lblUserScore.Size = new System.Drawing.Size(29, 12);
             this.lblUserScore.TabIndex = 2;
             this.lblUserScore.Text = "점수";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "낸 거";
             // 
             // grpComputer
             // 
@@ -96,6 +115,25 @@
             this.grpComputer.TabIndex = 4;
             this.grpComputer.TabStop = false;
             this.grpComputer.Text = "사용자";
+            // 
+            // txtComputerScore
+            // 
+            this.txtComputerScore.Enabled = false;
+            this.txtComputerScore.Location = new System.Drawing.Point(49, 44);
+            this.txtComputerScore.Name = "txtComputerScore";
+            this.txtComputerScore.Size = new System.Drawing.Size(100, 21);
+            this.txtComputerScore.TabIndex = 7;
+            this.txtComputerScore.Text = "500";
+            this.txtComputerScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtComputerPlayResult
+            // 
+            this.txtComputerPlayResult.Enabled = false;
+            this.txtComputerPlayResult.Location = new System.Drawing.Point(49, 18);
+            this.txtComputerPlayResult.Name = "txtComputerPlayResult";
+            this.txtComputerPlayResult.Size = new System.Drawing.Size(100, 21);
+            this.txtComputerPlayResult.TabIndex = 6;
+            this.txtComputerPlayResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -144,13 +182,6 @@
             this.grpBatting.TabStop = false;
             this.grpBatting.Text = "돈을 거세요!!";
             // 
-            // txtBatting
-            // 
-            this.txtBatting.Location = new System.Drawing.Point(151, 51);
-            this.txtBatting.Name = "txtBatting";
-            this.txtBatting.Size = new System.Drawing.Size(100, 21);
-            this.txtBatting.TabIndex = 0;
-            // 
             // hsBatting
             // 
             this.hsBatting.Location = new System.Drawing.Point(151, 79);
@@ -158,25 +189,15 @@
             this.hsBatting.Size = new System.Drawing.Size(100, 17);
             this.hsBatting.TabIndex = 1;
             this.hsBatting.Value = 50;
+            this.hsBatting.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsBatting_Scroll);
             // 
-            // txtUserPlayResult
+            // txtBatting
             // 
-            this.txtUserPlayResult.CausesValidation = false;
-            this.txtUserPlayResult.Location = new System.Drawing.Point(49, 18);
-            this.txtUserPlayResult.Name = "txtUserPlayResult";
-            this.txtUserPlayResult.Size = new System.Drawing.Size(100, 21);
-            this.txtUserPlayResult.TabIndex = 4;
-            this.txtUserPlayResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtUserScore
-            // 
-            this.txtUserScore.CausesValidation = false;
-            this.txtUserScore.Location = new System.Drawing.Point(49, 45);
-            this.txtUserScore.Name = "txtUserScore";
-            this.txtUserScore.Size = new System.Drawing.Size(100, 21);
-            this.txtUserScore.TabIndex = 5;
-            this.txtUserScore.Text = "500";
-            this.txtUserScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBatting.Enabled = false;
+            this.txtBatting.Location = new System.Drawing.Point(151, 51);
+            this.txtBatting.Name = "txtBatting";
+            this.txtBatting.Size = new System.Drawing.Size(100, 21);
+            this.txtBatting.TabIndex = 0;
             // 
             // btnScissors
             // 
@@ -217,25 +238,6 @@
             this.btnExit.Text = "종료";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtComputerPlayResult
-            // 
-            this.txtComputerPlayResult.CausesValidation = false;
-            this.txtComputerPlayResult.Location = new System.Drawing.Point(49, 18);
-            this.txtComputerPlayResult.Name = "txtComputerPlayResult";
-            this.txtComputerPlayResult.Size = new System.Drawing.Size(100, 21);
-            this.txtComputerPlayResult.TabIndex = 6;
-            this.txtComputerPlayResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtComputerScore
-            // 
-            this.txtComputerScore.CausesValidation = false;
-            this.txtComputerScore.Location = new System.Drawing.Point(49, 44);
-            this.txtComputerScore.Name = "txtComputerScore";
-            this.txtComputerScore.Size = new System.Drawing.Size(100, 21);
-            this.txtComputerScore.TabIndex = 7;
-            this.txtComputerScore.Text = "500";
-            this.txtComputerScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RockPaperScissors
             // 
